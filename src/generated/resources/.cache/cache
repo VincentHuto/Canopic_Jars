@@ -1,0 +1,9 @@
+961aa92d27c181a10d25ebba34a62075b3b14919 assets/canopicjars/lang/en_us.json
+e64c25734073a87749c5a99652ed55ae6cc76267 assets/canopicjars/models/item/ankh_charm.json
+96d795a38aee9bde8de4b00e8cd81a6fd614d341 assets/canopicjars/models/item/papyrus.json
+88a5436b6d1199e1831fd12336a78b29f2fd8f7b assets/canopicjars/models/item/reed_pen.json
+5ca6028b6a13c41c63ed5f3ca0455003da429126 assets/canopicjars/models/item/sandstone_shard.json
+14e8817f11c28729fe6fcfc8232731c9cb913b5c data/canopicjars/advancements/recipes/canopicjars/papyrus.json
+677ff95477f8a61d745568fddc07401ded749413 data/canopicjars/advancements/recipes/canopicjars/reed_pen.json
+b19e432ef29d004bb36f4726044f1893d3f17356 data/canopicjars/recipes/papyrus.json
+78890558580ea896f64371f4aa315add036673d9 data/canopicjars/recipes/reed_pen.json

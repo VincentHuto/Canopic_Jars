@@ -1,0 +1,8 @@
+{
+  "block.canopicjars.stone_jar": "Block.minecraft.air",
+  "item.canopicjars.ankh_charm": "Ankh Charm",
+  "item.canopicjars.papyrus": "Papyrus",
+  "item.canopicjars.reed_pen": "Reed Pen",
+  "item.canopicjars.sandstone_shard": "Sandstone Shard",
+  "itemGroup.canopicjars": "Canopic Jars; Organ Storage"
+}
