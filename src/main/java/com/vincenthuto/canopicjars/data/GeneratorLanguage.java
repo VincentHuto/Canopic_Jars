@@ -8,11 +8,12 @@ import com.vincenthuto.hutoslib.client.TextUtils;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.fmllegacy.RegistryObject;
 
 public class GeneratorLanguage extends LanguageProvider {
-	public GeneratorLanguage(DataGenerator gen) {
+	public GeneratorLanguage(DataGenerator gen, ExistingFileHelper helper) {
 		super(gen, CanopicJars.MOD_ID, "en_us");
 	}
 
@@ -44,6 +45,10 @@ public class GeneratorLanguage extends LanguageProvider {
 					TextUtils.convertInitToLang(b.get().asItem().getDescriptionId().replace("block.canopicjars.", "")));
 		}
 
+		for (RegistryObject<Block> b : BlockInit.SKULLBLOCKS.getEntries()) {
+			addBlock(b,
+					TextUtils.convertInitToLang(b.get().asItem().getDescriptionId().replace("block.canopicjars.", "")));
+		}
 
 		for (RegistryObject<Item> i : ItemInit.ITEMS.getEntries()) {
 			addItem(i, TextUtils.convertInitToLang(i.get().asItem().getDescriptionId().replace("item.canopicjars.", "")));

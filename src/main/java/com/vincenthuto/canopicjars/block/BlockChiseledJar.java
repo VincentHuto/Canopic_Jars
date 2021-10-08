@@ -2,15 +2,20 @@ package com.vincenthuto.canopicjars.block;
 
 import java.util.stream.Stream;
 
+import com.vincenthuto.canopicjars.tile.ChiseledJarBlockEntity;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition.Builder;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
@@ -19,14 +24,14 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class BlockStoneJar extends Block {
+public class BlockChiseledJar extends BaseEntityBlock {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	private static final VoxelShape SHAPE_N = Stream
 			.of(Block.box(3.75, 6, 3.75, 12.25, 11, 12.25), Block.box(4, 11, 4, 12, 14, 12),
 					Block.box(4, 0, 4, 12, 7, 12))
 			.reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
 
-	public BlockStoneJar(Properties properties) {
+	public BlockChiseledJar(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.SOUTH));
 
@@ -36,6 +41,11 @@ public class BlockStoneJar extends Block {
 	public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_,
 			CollisionContext p_60558_) {
 		return SHAPE_N;
+	}
+
+	@Override
+	public RenderShape getRenderShape(BlockState p_49232_) {
+		return RenderShape.MODEL;
 	}
 
 	@Override
@@ -64,9 +74,9 @@ public class BlockStoneJar extends Block {
 		builder.add(FACING);
 	}
 
-//	@Override
-//	public BlockEntity newBlockEntity(BlockPos p_153215_, BlockState p_153216_) {
-//		return new BlockEntityVisceralRecaller(p_153215_, p_153216_);
-//	}
+	@Override
+	public BlockEntity newBlockEntity(BlockPos p_153215_, BlockState p_153216_) {
+		return new ChiseledJarBlockEntity(p_153215_, p_153216_);
+	}
 
 }

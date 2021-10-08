@@ -1,10 +1,11 @@
 {
 	"credit": "Made with Blockbench",
-	  "parent" : "block/block",
 	"textures": {
-		"0": "canopicjars:block/cut_sandstone",
 		"1": "canopicjars:block/sandstone_top",
+		"2": "canopicjars:block/jar_top",
+		"4": "canopicjars:block/chiseled_sandstone",
 		"5": "canopicjars:block/red_sandstone_top",
+		"6": "canopicjars:block/stone_jar_sides",
 		"particle": "canopicjars:block/cut_sandstone"
 	},
 	"elements": [
@@ -12,12 +13,12 @@
 			"from": [4.75, 4, 4.75],
 			"to": [11.25, 8, 11.25],
 			"faces": {
-				"north": {"uv": [0, 0, 16, 11], "texture": "#0"},
-				"east": {"uv": [0, 0, 16, 11], "texture": "#0"},
-				"south": {"uv": [0, 0, 16, 11], "texture": "#0"},
-				"west": {"uv": [0, 0, 16, 11], "texture": "#0"},
-				"up": {"uv": [0, 0, 16, 11], "texture": "#0"},
-				"down": {"uv": [0, 0, 16, 11], "texture": "#0"}
+				"north": {"uv": [0, 0, 16, 11], "texture": "#4"},
+				"east": {"uv": [0, 0, 16, 11], "texture": "#4"},
+				"south": {"uv": [0, 0, 16, 11], "texture": "#4"},
+				"west": {"uv": [0, 0, 16, 11], "texture": "#4"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"down": {"uv": [0, 0, 16, 11], "texture": "#4"}
 			}
 		}, 
 		{
@@ -36,11 +37,11 @@
 			"from": [5, 0, 5],
 			"to": [11, 6, 11],
 			"faces": {
-				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
-				"east": {"uv": [0, 0, 16, 16], "texture": "#0"},
-				"south": {"uv": [0, 0, 16, 16], "texture": "#0"},
-				"west": {"uv": [0, 0, 16, 16], "texture": "#0"},
-				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"north": {"uv": [0, 0, 16, 16], "texture": "#6"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#6"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#6"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#6"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#6"},
 				"down": {"uv": [0, 0, 16, 16], "texture": "#1"}
 			}
 		}

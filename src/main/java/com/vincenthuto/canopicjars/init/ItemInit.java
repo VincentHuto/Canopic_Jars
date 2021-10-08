@@ -30,6 +30,13 @@ public class ItemInit {
 	public static final RegistryObject<Item> reed_pen = ITEMS.register("reed_pen",
 			() -> new Item(new Item.Properties().tab(CanopicJarsItemGroup.instance).stacksTo(1)));
 
+	public static final RegistryObject<Item> ink_pot = ITEMS.register("ink_pot",
+			() -> new Item(new Item.Properties().tab(CanopicJarsItemGroup.instance).stacksTo(1)));
+
+	public static final RegistryObject<Item> doped_ink_pot = ITEMS.register("doped_ink_pot",
+			() -> new Item(new Item.Properties().tab(CanopicJarsItemGroup.instance).stacksTo(1)));
+
+	
 	public static final RegistryObject<Item> sandstone_shard = ITEMS.register("sandstone_shard",
 			() -> new Item(new Item.Properties().tab(CanopicJarsItemGroup.instance)));
 

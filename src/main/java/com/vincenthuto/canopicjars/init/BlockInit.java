@@ -1,6 +1,8 @@
 package com.vincenthuto.canopicjars.init;
 
 import com.vincenthuto.canopicjars.CanopicJars;
+import com.vincenthuto.canopicjars.block.BlockChiseledJar;
+import com.vincenthuto.canopicjars.block.BlockModSkull;
 import com.vincenthuto.canopicjars.block.BlockStoneJar;
 
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -26,19 +28,33 @@ public class BlockInit {
 	public static final DeferredRegister<Block> MODELEDBLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			CanopicJars.MOD_ID);
 
-	public static final RegistryObject<Block> stone_jar = MODELEDBLOCKS.register("stone_jar",
-			() -> new BlockStoneJar(BlockBehaviour.Properties.of(Material.STONE).strength(50f, 1500f).sound(SoundType.STONE)));
+	public static final DeferredRegister<Block> SKULLBLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
+			CanopicJars.MOD_ID);
 
-//	public static final RegistryObject<Block> venous_stone = BLOCKS.register("venous_stone",
-//			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)
-//					.requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
-//	
+	public static final RegistryObject<Block> stone_jar = MODELEDBLOCKS.register("stone_jar", () -> new BlockStoneJar(
+			BlockBehaviour.Properties.of(Material.STONE).strength(50f, 1500f).sound(SoundType.STONE)));
+
+	public static final RegistryObject<Block> chiseled_jar = MODELEDBLOCKS.register("chiseled_jar",
+			() -> new BlockChiseledJar(
+					BlockBehaviour.Properties.of(Material.STONE).strength(50f, 1500f).sound(SoundType.STONE)));
+
+	public static final RegistryObject<Block> sandstone_skull = SKULLBLOCKS.register("sandstone_skull",
+			() -> new BlockModSkull(BlockModSkull.Types.SANDSTONE,
+					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F)));
+
+	public static final RegistryObject<Block> red_sandstone_skull = SKULLBLOCKS.register("red_sandstone_skull",
+			() -> new BlockModSkull(BlockModSkull.Types.REDSANDSTONE,
+					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F)));
+
+	public static final RegistryObject<Block> player_sandstone_skull = SKULLBLOCKS.register("player_sandstone_skull",
+			() -> new BlockModSkull(BlockModSkull.Types.PLAYER,
+					BlockBehaviour.Properties.of(Material.DECORATION).strength(1.0F)));
 
 	@SubscribeEvent
 	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
 		if (FMLEnvironment.dist == Dist.CLIENT) {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.stone_jar.get(), RenderType.translucent());
-
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.chiseled_jar.get(), RenderType.translucent());
 		}
 	}
 

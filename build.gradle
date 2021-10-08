@@ -51,15 +51,17 @@ minecraft {
             }
         }
 
+       
         data {
             workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
+
+            property 'forge.logging.markers', ''
             property 'forge.logging.console.level', 'debug'
-          property "mixin.env.remapRefMap", "true"
-            property "mixin.env.refMapRemappingFile", "canopicjars/build/createSrgToMcp/output.srg"
-            args '--mod', 'canopicjars', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+
+            args '--mod', 'canopicjars', '--all', '--output', file('src/main/generated_resources/'), '--existing', file('src/main/resources/')
+
             mods {
-                canopicjars {
+                thismod {
                     source sourceSets.main
                 }
             }
