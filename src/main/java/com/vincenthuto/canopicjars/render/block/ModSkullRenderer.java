@@ -17,6 +17,8 @@ import com.vincenthuto.canopicjars.block.AbstractModSkullBlock;
 import com.vincenthuto.canopicjars.block.BlockModSkull;
 import com.vincenthuto.canopicjars.block.WallBlockModSkull;
 import com.vincenthuto.canopicjars.init.ModelLayersInit;
+import com.vincenthuto.canopicjars.model.BaboonSkullModel;
+import com.vincenthuto.canopicjars.model.JackalSkullModel;
 import com.vincenthuto.canopicjars.tile.ModSkullBlockEntity;
 
 import net.minecraft.Util;
@@ -41,10 +43,11 @@ public class ModSkullRenderer implements BlockEntityRenderer<ModSkullBlockEntity
 	private static final Map<AbstractModSkullBlock.Type, ResourceLocation> SKIN_BY_TYPE = Util.make(Maps.newHashMap(),
 			(p_112552_) -> {
 				p_112552_.put(AbstractModSkullBlock.Types.PLAYER, DefaultPlayerSkin.getDefaultSkin());
-				p_112552_.put(AbstractModSkullBlock.Types.SANDSTONE,
-						new ResourceLocation(CanopicJars.MOD_ID, "textures/entity/skulls/sandstone.png"));
-				p_112552_.put(AbstractModSkullBlock.Types.REDSANDSTONE,
-						new ResourceLocation(CanopicJars.MOD_ID, "textures/entity/skulls/red_sandstone.png"));
+				p_112552_.put(AbstractModSkullBlock.Types.SANDSTONE, createSkullLoc("sandstone"));
+				p_112552_.put(AbstractModSkullBlock.Types.REDSANDSTONE, createSkullLoc("red_sandstone"));
+				p_112552_.put(AbstractModSkullBlock.Types.JACKAL, createSkullLoc("jackal"));
+				p_112552_.put(AbstractModSkullBlock.Types.FALCON, createSkullLoc("falcon"));
+				p_112552_.put(AbstractModSkullBlock.Types.BABOON, createSkullLoc("baboon"));
 
 			});
 
@@ -52,14 +55,24 @@ public class ModSkullRenderer implements BlockEntityRenderer<ModSkullBlockEntity
 		Builder<AbstractModSkullBlock.Type, SkullModelBase> builder = ImmutableMap.builder();
 		builder.put(AbstractModSkullBlock.Types.PLAYER, new SkullModel(p_173662_.bakeLayer(ModelLayers.PLAYER_HEAD)));
 		builder.put(AbstractModSkullBlock.Types.SANDSTONE,
-				new SkullModel(p_173662_.bakeLayer(ModelLayersInit.sandstone)));
+				new SkullModel(p_173662_.bakeLayer(ModelLayersInit.sandstone_skull)));
 		builder.put(AbstractModSkullBlock.Types.REDSANDSTONE,
-				new SkullModel(p_173662_.bakeLayer(ModelLayersInit.red_sandstone)));
+				new SkullModel(p_173662_.bakeLayer(ModelLayersInit.red_sandstone_skull)));
+		builder.put(AbstractModSkullBlock.Types.JACKAL,
+				new JackalSkullModel(p_173662_.bakeLayer(ModelLayersInit.jackal_skull)));
+		builder.put(AbstractModSkullBlock.Types.FALCON,
+				new BaboonSkullModel(p_173662_.bakeLayer(ModelLayersInit.falcon_skull)));
+		builder.put(AbstractModSkullBlock.Types.BABOON,
+				new BaboonSkullModel(p_173662_.bakeLayer(ModelLayersInit.baboon_skull)));
 		return builder.build();
 	}
 
 	public ModSkullRenderer(BlockEntityRendererProvider.Context p_173660_) {
 		this.modelByType = createSkullRenderers(p_173660_.getModelSet());
+	}
+
+	public static ResourceLocation createSkullLoc(String path) {
+		return new ResourceLocation(CanopicJars.MOD_ID, "textures/entity/skulls/" + path + ".png");
 	}
 
 	public void render(ModSkullBlockEntity te, float p_112535_, PoseStack ms, MultiBufferSource buffer, int p_112538_,
@@ -77,7 +90,8 @@ public class ModSkullRenderer implements BlockEntityRenderer<ModSkullBlockEntity
 	}
 
 	public static void renderSkull(@Nullable Direction dir, float p_173665_, float p_173666_, PoseStack ms,
-			MultiBufferSource buffer, int light, SkullModelBase skullmodel, RenderType rendertype,AbstractModSkullBlock.Type skullblock$type) {
+			MultiBufferSource buffer, int light, SkullModelBase skullmodel, RenderType rendertype,
+			AbstractModSkullBlock.Type skullblock$type) {
 		ms.pushPose();
 		if (dir == null) {
 			ms.translate(0.5D, 0.0D, 0.5D);
@@ -89,9 +103,9 @@ public class ModSkullRenderer implements BlockEntityRenderer<ModSkullBlockEntity
 		ms.scale(-1.0F, -1.0F, 1.0F);
 		VertexConsumer vertexconsumer = buffer.getBuffer(rendertype);
 		skullmodel.setupAnim(p_173666_, p_173665_, 0.0F);
-		if(skullblock$type == AbstractModSkullBlock.Types.PLAYER) {
+		if (skullblock$type == AbstractModSkullBlock.Types.PLAYER) {
 			skullmodel.renderToBuffer(ms, vertexconsumer, light, OverlayTexture.NO_OVERLAY, 0.60F, 0.5F, 0.0F, 1.0F);
-		}else {
+		} else {
 			skullmodel.renderToBuffer(ms, vertexconsumer, light, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
 		}
 		ms.popPose();

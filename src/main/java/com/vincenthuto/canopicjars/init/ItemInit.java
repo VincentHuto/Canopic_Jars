@@ -2,6 +2,7 @@ package com.vincenthuto.canopicjars.init;
 
 import com.vincenthuto.canopicjars.CanopicJars;
 import com.vincenthuto.canopicjars.CanopicJars.CanopicJarsItemGroup;
+import com.vincenthuto.canopicjars.item.ItemReedPen;
 import com.vincenthuto.hutoslib.common.item.ModSpawnEggItem;
 
 import net.minecraft.client.color.item.ItemColor;
@@ -28,7 +29,7 @@ public class ItemInit {
 			() -> new Item(new Item.Properties().tab(CanopicJarsItemGroup.instance)));
 
 	public static final RegistryObject<Item> reed_pen = ITEMS.register("reed_pen",
-			() -> new Item(new Item.Properties().tab(CanopicJarsItemGroup.instance).stacksTo(1)));
+			() -> new ItemReedPen(new Item.Properties().tab(CanopicJarsItemGroup.instance).stacksTo(1)));
 
 	public static final RegistryObject<Item> ink_pot = ITEMS.register("ink_pot",
 			() -> new Item(new Item.Properties().tab(CanopicJarsItemGroup.instance).stacksTo(1)));
@@ -36,7 +37,6 @@ public class ItemInit {
 	public static final RegistryObject<Item> doped_ink_pot = ITEMS.register("doped_ink_pot",
 			() -> new Item(new Item.Properties().tab(CanopicJarsItemGroup.instance).stacksTo(1)));
 
-	
 	public static final RegistryObject<Item> sandstone_shard = ITEMS.register("sandstone_shard",
 			() -> new Item(new Item.Properties().tab(CanopicJarsItemGroup.instance)));
 

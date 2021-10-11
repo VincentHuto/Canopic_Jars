@@ -2,7 +2,7 @@ package com.vincenthuto.canopicjars.block;
 
 import java.util.function.Consumer;
 
-import com.vincenthuto.canopicjars.render.block.ModSkullISTER;
+import com.vincenthuto.canopicjars.render.block.DissectionTableISTER;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -12,23 +12,23 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.IItemRenderProperties;
 
-public class ModSkullBlockItem extends BlockItem {
+public class DissectionAltarBlockItem extends BlockItem {
 
-	public ModSkullBlockItem(Block p_40565_, Properties p_40566_) {
+	public DissectionAltarBlockItem(Block p_40565_, Properties p_40566_) {
 		super(p_40565_, p_40566_);
 	}
 
 	@Override
 	public void initializeClient(Consumer<IItemRenderProperties> consumer) {
 		super.initializeClient(consumer);
-		consumer.accept(RenderPropSkull.INSTANCE);
+		consumer.accept(RenderPropAltar.INSTANCE);
 
 	}
 }
 
-class RenderPropSkull implements IItemRenderProperties {
+class RenderPropAltar implements IItemRenderProperties {
 
-	public static RenderPropSkull INSTANCE = new RenderPropSkull();
+	public static RenderPropAltar INSTANCE = new RenderPropAltar();
 
 	@SuppressWarnings("resource")
 	@Override
@@ -38,7 +38,7 @@ class RenderPropSkull implements IItemRenderProperties {
 
 	@Override
 	public BlockEntityWithoutLevelRenderer getItemStackRenderer() {
-		return new ModSkullISTER(Minecraft.getInstance().getBlockEntityRenderDispatcher(),
+		return new DissectionTableISTER(Minecraft.getInstance().getBlockEntityRenderDispatcher(),
 				Minecraft.getInstance().getEntityModels());
 	}
 }
