@@ -20,43 +20,43 @@ public class GeneratorLanguage extends LanguageProvider {
 	@Override
 	protected void addTranslations() {
 		// Jei
-	//	add("canopicjars.jei.recaller", "Visceral Recaller");
-	//	add("canopicjars.jei.chisel_station", "Chisel Station");
+		// add("canopicjars.jei.recaller", "Visceral Recaller");
+		// add("canopicjars.jei.chisel_station", "Chisel Station");
 
 		// Banner
 
-	//	addArmBannerTranslation("leather");
-
+		// addArmBannerTranslation("leather");
 
 //		addBannerTranslation("hemomancy_heart", "Vascularium");
 //		addBannerTranslation("hemomancy_veins", "Veins");
-	//	add("item.canopicjars.heart_pattern.desc", "Vascularium Crest");
-
+		// add("item.canopicjars.heart_pattern.desc", "Vascularium Crest");
 
 		add("itemGroup.canopicjars", "Canopic Jars; Organ Storage");
 
 		for (RegistryObject<Block> b : BlockInit.BLOCKS.getEntries()) {
-			addBlock(b,
-					HLTextUtils.convertInitToLang(b.get().asItem().getDescriptionId().replace("block.canopicjars.", "")));
-		}
-		
-		for (RegistryObject<Block> b : BlockInit.MODELEDBLOCKS.getEntries()) {
-			addBlock(b,
-					HLTextUtils.convertInitToLang(b.get().asItem().getDescriptionId().replace("block.canopicjars.", "")));
+			addBlock(b, HLTextUtils
+					.convertInitToLang(b.get().asItem().getDescriptionId().replace("block.canopicjars.", "")));
 		}
 
+		for (RegistryObject<Block> b : BlockInit.MODELEDBLOCKS.getEntries()) {
+			addBlock(b, HLTextUtils
+					.convertInitToLang(b.get().asItem().getDescriptionId().replace("block.canopicjars.", "")));
+		}
+		for (RegistryObject<Block> b : BlockInit.ALTARBLOCKS.getEntries()) {
+			addBlock(b, HLTextUtils
+					.convertInitToLang(b.get().asItem().getDescriptionId().replace("block.canopicjars.", "")));
+		}
 		for (RegistryObject<Block> b : BlockInit.SKULLBLOCKS.getEntries()) {
-			addBlock(b,
-					HLTextUtils.convertInitToLang(b.get().asItem().getDescriptionId().replace("block.canopicjars.", "")));
+			addBlock(b, HLTextUtils
+					.convertInitToLang(b.get().asItem().getDescriptionId().replace("block.canopicjars.", "")));
 		}
 
 		for (RegistryObject<Item> i : ItemInit.ITEMS.getEntries()) {
-			addItem(i, HLTextUtils.convertInitToLang(i.get().asItem().getDescriptionId().replace("item.canopicjars.", "")));
+			addItem(i, HLTextUtils
+					.convertInitToLang(i.get().asItem().getDescriptionId().replace("item.canopicjars.", "")));
 		}
 
-
 	}
-
 
 	public void addBannerTranslation(String regName, String transName) {
 		add("block.minecraft.banner." + regName + ".black", "Black " + transName);
