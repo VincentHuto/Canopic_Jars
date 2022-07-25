@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:sand"
+    },
+    "C": {
+      "item": "minecraft:sugar_cane"
+    }
+  },
+  "result": {
+    "item": "canopicjars:papyrus",
+    "count": 3
+  }
+}
