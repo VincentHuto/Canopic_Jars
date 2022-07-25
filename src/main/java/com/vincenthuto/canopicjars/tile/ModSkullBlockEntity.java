@@ -51,15 +51,14 @@ public class ModSkullBlockEntity extends BlockEntity {
 		mainThreadExecutor = p_182463_;
 	}
 
-	public CompoundTag save(CompoundTag p_59774_) {
-		super.save(p_59774_);
+	public void saveAdditional(CompoundTag p_59774_) {
+		super.saveAdditional(p_59774_);
 		if (this.owner != null) {
 			CompoundTag compoundtag = new CompoundTag();
 			NbtUtils.writeGameProfile(compoundtag, this.owner);
 			p_59774_.put("SkullOwner", compoundtag);
 		}
 
-		return p_59774_;
 	}
 
 	public void load(CompoundTag p_155745_) {
@@ -84,13 +83,9 @@ public class ModSkullBlockEntity extends BlockEntity {
 		return this.owner;
 	}
 
-	@Nullable
+	@Override
 	public ClientboundBlockEntityDataPacket getUpdatePacket() {
-		return new ClientboundBlockEntityDataPacket(this.worldPosition, 4, this.getUpdateTag());
-	}
-
-	public CompoundTag getUpdateTag() {
-		return this.save(new CompoundTag());
+		return ClientboundBlockEntityDataPacket.create(this);
 	}
 
 	public void setOwner(@Nullable GameProfile p_59770_) {
@@ -118,7 +113,7 @@ public class ModSkullBlockEntity extends BlockEntity {
 						Property property = Iterables.getFirst(p_182479_.getProperties().get("textures"),
 								(Property) null);
 						if (property == null) {
-							
+
 							p_182479_ = sessionService.fillProfileProperties(p_182479_, true);
 						}
 

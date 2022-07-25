@@ -3,14 +3,14 @@ package com.vincenthuto.canopicjars.data;
 import com.vincenthuto.canopicjars.CanopicJars;
 import com.vincenthuto.canopicjars.init.BlockInit;
 import com.vincenthuto.canopicjars.init.ItemInit;
-import com.vincenthuto.hutoslib.client.TextUtils;
+import com.vincenthuto.hutoslib.client.HLTextUtils;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.LanguageProvider;
-import net.minecraftforge.fmllegacy.RegistryObject;
+import net.minecraftforge.registries.RegistryObject;
 
 public class GeneratorLanguage extends LanguageProvider {
 	public GeneratorLanguage(DataGenerator gen, ExistingFileHelper helper) {
@@ -37,21 +37,21 @@ public class GeneratorLanguage extends LanguageProvider {
 
 		for (RegistryObject<Block> b : BlockInit.BLOCKS.getEntries()) {
 			addBlock(b,
-					TextUtils.convertInitToLang(b.get().asItem().getDescriptionId().replace("block.canopicjars.", "")));
+					HLTextUtils.convertInitToLang(b.get().asItem().getDescriptionId().replace("block.canopicjars.", "")));
 		}
 		
 		for (RegistryObject<Block> b : BlockInit.MODELEDBLOCKS.getEntries()) {
 			addBlock(b,
-					TextUtils.convertInitToLang(b.get().asItem().getDescriptionId().replace("block.canopicjars.", "")));
+					HLTextUtils.convertInitToLang(b.get().asItem().getDescriptionId().replace("block.canopicjars.", "")));
 		}
 
 		for (RegistryObject<Block> b : BlockInit.SKULLBLOCKS.getEntries()) {
 			addBlock(b,
-					TextUtils.convertInitToLang(b.get().asItem().getDescriptionId().replace("block.canopicjars.", "")));
+					HLTextUtils.convertInitToLang(b.get().asItem().getDescriptionId().replace("block.canopicjars.", "")));
 		}
 
 		for (RegistryObject<Item> i : ItemInit.ITEMS.getEntries()) {
-			addItem(i, TextUtils.convertInitToLang(i.get().asItem().getDescriptionId().replace("item.canopicjars.", "")));
+			addItem(i, HLTextUtils.convertInitToLang(i.get().asItem().getDescriptionId().replace("item.canopicjars.", "")));
 		}
 
 
@@ -79,35 +79,35 @@ public class GeneratorLanguage extends LanguageProvider {
 
 	public void addArmBannerTranslation(String prefix) {
 		add("item.canopicjars." + prefix + "_arm_banner.black",
-				"Black " + TextUtils.convertInitToLang(prefix + "_arm_banner"));
-		add("item.canopicjars." + prefix + "_arm_banner.red", "Red " + TextUtils.convertInitToLang("_arm_banner"));
+				"Black " + HLTextUtils.convertInitToLang(prefix + "_arm_banner"));
+		add("item.canopicjars." + prefix + "_arm_banner.red", "Red " + HLTextUtils.convertInitToLang("_arm_banner"));
 		add("item.canopicjars." + prefix + "_arm_banner.green",
-				"Green " + TextUtils.convertInitToLang(prefix + "_arm_banner"));
+				"Green " + HLTextUtils.convertInitToLang(prefix + "_arm_banner"));
 		add("item.canopicjars." + prefix + "_arm_banner.brown",
-				"Brown " + TextUtils.convertInitToLang(prefix + "_arm_banner"));
+				"Brown " + HLTextUtils.convertInitToLang(prefix + "_arm_banner"));
 		add("item.canopicjars." + prefix + "_arm_banner.blue",
-				"Blue " + TextUtils.convertInitToLang(prefix + "_arm_banner"));
+				"Blue " + HLTextUtils.convertInitToLang(prefix + "_arm_banner"));
 		add("item.canopicjars." + prefix + "_arm_banner.purple",
-				"Purple " + TextUtils.convertInitToLang(prefix + "_arm_banner"));
+				"Purple " + HLTextUtils.convertInitToLang(prefix + "_arm_banner"));
 		add("item.canopicjars." + prefix + "_arm_banner.cyan",
-				"Cyan " + TextUtils.convertInitToLang(prefix + "_arm_banner"));
+				"Cyan " + HLTextUtils.convertInitToLang(prefix + "_arm_banner"));
 		add("item.canopicjars." + prefix + "_arm_banner.silver",
-				"Light Gray " + TextUtils.convertInitToLang(prefix + "_arm_banner"));
+				"Light Gray " + HLTextUtils.convertInitToLang(prefix + "_arm_banner"));
 		add("item.canopicjars." + prefix + "_arm_banner.gray",
-				"Gray " + TextUtils.convertInitToLang(prefix + "_arm_banner"));
+				"Gray " + HLTextUtils.convertInitToLang(prefix + "_arm_banner"));
 		add("item.canopicjars." + prefix + "_arm_banner.pink",
-				"Pink " + TextUtils.convertInitToLang(prefix + "_arm_banner"));
+				"Pink " + HLTextUtils.convertInitToLang(prefix + "_arm_banner"));
 		add("item.canopicjars." + prefix + "_arm_banner.lime",
-				"Lime " + TextUtils.convertInitToLang(prefix + "_arm_banner"));
+				"Lime " + HLTextUtils.convertInitToLang(prefix + "_arm_banner"));
 		add("item.canopicjars." + prefix + "_arm_banner.yellow",
-				"Yellow " + TextUtils.convertInitToLang(prefix + "_arm_banner"));
+				"Yellow " + HLTextUtils.convertInitToLang(prefix + "_arm_banner"));
 		add("item.canopicjars." + prefix + "_arm_banner.lightBlue",
-				"Light " + TextUtils.convertInitToLang(prefix + "_arm_banner"));
+				"Light " + HLTextUtils.convertInitToLang(prefix + "_arm_banner"));
 		add("item.canopicjars." + prefix + "_arm_banner.magenta",
-				"Magenta " + TextUtils.convertInitToLang(prefix + "_arm_banner"));
+				"Magenta " + HLTextUtils.convertInitToLang(prefix + "_arm_banner"));
 		add("item.canopicjars." + prefix + "_arm_banner.orange",
-				"Orange " + TextUtils.convertInitToLang(prefix + "_arm_banner"));
+				"Orange " + HLTextUtils.convertInitToLang(prefix + "_arm_banner"));
 		add("item.canopicjars." + prefix + "_arm_banner.white",
-				"White " + TextUtils.convertInitToLang(prefix + "_arm_banner"));
+				"White " + HLTextUtils.convertInitToLang(prefix + "_arm_banner"));
 	}
 }

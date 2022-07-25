@@ -1,6 +1,6 @@
 modLoader="javafml" #mandatory
 
-loaderVersion="[32,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+loaderVersion="[38,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 
 license="All rights reserved"
 
@@ -11,7 +11,7 @@ issueTrackerURL="http://my.issue.tracker/" #optional
 modId="canopicjars" #mandatory
 
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
-version="2.01" #mandatory
+version="2.0" #mandatory
 
  # A display name for the mod
 displayName="Canopic Jars: Organ Storage" #mandatory
@@ -39,14 +39,15 @@ description='''
 ~Huto
 '''
 
+
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.canopicjars]] #optional
+[[dependencies.canopicjars]]
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
     mandatory=true #mandatory
     # The version range of the dependency
-    versionRange="[37,)" #mandatory
+    versionRange="[38,)" #mandatory
     # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
     ordering="NONE"
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
@@ -56,6 +57,22 @@ description='''
     modId="minecraft"
     mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="[1.17.1,1.18)"
+    versionRange="[1.18,1.19)"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.canopicjars]]
+    modId="hutoslib"
+    mandatory=true
+    versionRange="[1,)"
+    ordering="NONE"
+    side="BOTH"
+    
+[[dependencies.canopicjars]]
+    modId="jei"
+    mandatory=false
+    versionRange="[8,)"
+    ordering="NONE"
+    side="BOTH"
+    
+    

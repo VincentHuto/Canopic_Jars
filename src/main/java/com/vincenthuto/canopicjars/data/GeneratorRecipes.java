@@ -2,7 +2,6 @@ package com.vincenthuto.canopicjars.data;
 
 import java.util.function.Consumer;
 
-
 import com.vincenthuto.canopicjars.init.ItemInit;
 
 import net.minecraft.data.DataGenerator;

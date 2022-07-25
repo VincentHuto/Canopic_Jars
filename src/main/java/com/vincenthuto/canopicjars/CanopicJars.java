@@ -3,6 +3,7 @@ package com.vincenthuto.canopicjars;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.vincenthuto.canopicjars.CanopicJars.CanopicJarsItemGroup;
 import com.vincenthuto.canopicjars.block.DissectionAltarBlockItem;
 import com.vincenthuto.canopicjars.block.ModSkullBlockItem;
 import com.vincenthuto.canopicjars.init.BlockEntityInit;
@@ -30,8 +31,8 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraftforge.registries.RegistryObject;
 
 @Mod("canopicjars")
 @Mod.EventBusSubscriber(modid = CanopicJars.MOD_ID, bus = Bus.MOD)
@@ -107,7 +108,7 @@ public class CanopicJars {
 
 	@SuppressWarnings("deprecation")
 	public void onTextureStitch(TextureStitchEvent.Pre event) {
-		if (event.getMap().location().equals(TextureAtlas.LOCATION_BLOCKS)) {
+		if (event.getAtlas().location().equals(TextureAtlas.LOCATION_BLOCKS)) {
 			System.out.println("STICHING");
 		event.addSprite(new ResourceLocation(CanopicJars.MOD_ID, "block/dissection_altar"));
 		}

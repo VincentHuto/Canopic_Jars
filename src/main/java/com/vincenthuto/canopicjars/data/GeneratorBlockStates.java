@@ -8,7 +8,7 @@ import net.minecraft.data.models.model.ModelLocationUtils;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fmllegacy.RegistryObject;
+import net.minecraftforge.registries.RegistryObject;
 
 public class GeneratorBlockStates extends BlockStateProvider {
 	public GeneratorBlockStates(DataGenerator gen, ExistingFileHelper exFileHelper) {

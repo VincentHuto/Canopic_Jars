@@ -13,8 +13,9 @@ public class DissectionAltarBlockEntity extends BlockEntity {
 	      super(BlockEntityInit.dissection_altar.get(), p_155115_, p_155116_);
 	   }
 
+	@Override
 	public ClientboundBlockEntityDataPacket getUpdatePacket() {
-		return new ClientboundBlockEntityDataPacket(this.worldPosition, 11, this.getUpdateTag());
+		return ClientboundBlockEntityDataPacket.create(this);
 	}
 
 }
