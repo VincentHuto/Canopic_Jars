@@ -53,7 +53,7 @@ public class BlockStoneJar extends Block {
 				stack.hurtAndBreak(5 + worldIn.random.nextInt(3), player, (p_220017_1_) -> {
 					p_220017_1_.broadcastBreakEvent(player.getUsedItemHand());
 				});
-				worldIn.setBlockAndUpdate(pos, BlockInit.chiseled_jar.get().defaultBlockState());
+				worldIn.setBlockAndUpdate(pos, BlockInit.chiseled_sandstone_jar.get().defaultBlockState());
 			}
 		}
 

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LRL",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "R": {
+      "item": "minecraft:red_sandstone"
+    },
+    "S": {
+      "item": "minecraft:sandstone"
+    },
+    "L": {
+      "item": "minecraft:sandstone_slab"
+    }
+  },
+  "result": {
+    "item": "canopicjars:sandstone_jar"
+  }
+}

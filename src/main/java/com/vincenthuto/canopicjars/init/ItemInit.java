@@ -30,7 +30,8 @@ public class ItemInit {
 
 	public static final RegistryObject<Item> reed_pen = ITEMS.register("reed_pen",
 			() -> new ItemReedPen(new Item.Properties().tab(CanopicJarsItemGroup.instance).stacksTo(1)));
-
+	public static final RegistryObject<Item> nasal_hook = ITEMS.register("nasal_hook",
+			() -> new ItemReedPen(new Item.Properties().tab(CanopicJarsItemGroup.instance).stacksTo(1)));
 	public static final RegistryObject<Item> ink_pot = ITEMS.register("ink_pot",
 			() -> new Item(new Item.Properties().tab(CanopicJarsItemGroup.instance).stacksTo(1)));
 

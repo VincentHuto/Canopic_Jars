@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "canopicjars:viable_sandstone_jar"
+    ]
+  },
+  "criteria": {
+    "has_chiseled_sandstone_jar": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "canopicjars:chiseled_sandstone_jar"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "canopicjars:viable_sandstone_jar"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_chiseled_sandstone_jar",
+      "has_the_recipe"
+    ]
+  ]
+}

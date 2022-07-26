@@ -22,7 +22,7 @@ public class BlockEntityInit {
 					.build(null));
 	public static final RegistryObject<BlockEntityType<ChiseledJarBlockEntity>> chiseled_jar = TILES.register(
 			"chiseled_jar",
-			() -> BlockEntityType.Builder.of(ChiseledJarBlockEntity::new, BlockInit.stone_jar.get()).build(null));
+			() -> BlockEntityType.Builder.of(ChiseledJarBlockEntity::new, BlockInit.sandstone_jar.get()).build(null));
 
 	public static final RegistryObject<BlockEntityType<DissectionAltarBlockEntity>> dissection_altar = TILES
 			.register("dissection_altar", () -> BlockEntityType.Builder

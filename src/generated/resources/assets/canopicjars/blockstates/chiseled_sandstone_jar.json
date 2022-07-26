@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "canopicjars:block/chiseled_sandstone_jar"
+    },
+    "facing=south": {
+      "model": "canopicjars:block/chiseled_sandstone_jar",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "canopicjars:block/chiseled_sandstone_jar",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "canopicjars:block/chiseled_sandstone_jar",
+      "y": 90
+    }
+  }
+}

@@ -41,14 +41,14 @@ public class BlockInit {
 			() -> new BlockDissectionAltar(
 					BlockBehaviour.Properties.of(Material.STONE).strength(50f, 1500f).sound(SoundType.STONE)));
 
-	public static final RegistryObject<Block> stone_jar = MODELEDBLOCKS.register("stone_jar", () -> new BlockStoneJar(
+	public static final RegistryObject<Block> sandstone_jar = MODELEDBLOCKS.register("sandstone_jar", () -> new BlockStoneJar(
 			BlockBehaviour.Properties.of(Material.STONE).strength(50f, 1500f).sound(SoundType.STONE)));
 
-	public static final RegistryObject<Block> chiseled_jar = MODELEDBLOCKS.register("chiseled_jar",
+	public static final RegistryObject<Block> chiseled_sandstone_jar = MODELEDBLOCKS.register("chiseled_sandstone_jar",
 			() -> new BlockChiseledJar(
 					BlockBehaviour.Properties.of(Material.STONE).strength(50f, 1500f).sound(SoundType.STONE)));
 	
-	public static final RegistryObject<Block> viable_jar = MODELEDBLOCKS.register("viable_jar",
+	public static final RegistryObject<Block> viable_sandstone_jar = MODELEDBLOCKS.register("viable_sandstone_jar",
 			() -> new BlockChiseledJar(
 					BlockBehaviour.Properties.of(Material.STONE).strength(50f, 1500f).sound(SoundType.STONE)));
 
@@ -78,9 +78,9 @@ public class BlockInit {
 	@SubscribeEvent
 	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
 		if (FMLEnvironment.dist == Dist.CLIENT) {
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.stone_jar.get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.chiseled_jar.get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(BlockInit.viable_jar.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.sandstone_jar.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.chiseled_sandstone_jar.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.viable_sandstone_jar.get(), RenderType.translucent());
 
 		}
 	}

@@ -57,7 +57,7 @@ public class BlockChiseledJar extends BaseEntityBlock {
 				worldIn.destroyBlock(pos, false);
 				worldIn.addDestroyBlockEffect(pos, Blocks.CLAY.defaultBlockState());
 				stack.shrink(1);
-				worldIn.setBlockAndUpdate(pos, BlockInit.stone_jar.get().defaultBlockState());
+				worldIn.setBlockAndUpdate(pos, BlockInit.sandstone_jar.get().defaultBlockState());
 			}
 		}
 

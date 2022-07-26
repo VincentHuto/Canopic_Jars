@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    "CTM",
+    " S "
+  ],
+  "key": {
+    "T": {
+      "item": "minecraft:totem_of_undying"
+    },
+    "A": {
+      "item": "minecraft:golden_apple"
+    },
+    "M": {
+      "item": "minecraft:glistering_melon_slice"
+    },
+    "S": {
+      "item": "minecraft:soul_torch"
+    },
+    "C": {
+      "item": "minecraft:golden_carrot"
+    }
+  },
+  "result": {
+    "item": "canopicjars:ankh_charm"
+  }
+}

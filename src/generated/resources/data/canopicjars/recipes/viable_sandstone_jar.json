@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "canopicjars:chiseled_sandstone_jar"
+    },
+    {
+      "item": "canopicjars:ankh_charm"
+    },
+    {
+      "item": "canopicjars:doped_ink_pot"
+    },
+    {
+      "item": "canopicjars:papyrus"
+    }
+  ],
+  "result": {
+    "item": "canopicjars:viable_sandstone_jar"
+  }
+}
